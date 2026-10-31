@@ -145,12 +145,6 @@ html.js .steam path{stroke-dasharray:1 2;stroke-dashoffset:1;animation:draw 1.4s
 .visit-tx .btns{margin-top:12px}
 .visit-tx .btn{flex:1 1 200px}
 @media(min-width:900px){.visit{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}.visit-tx{padding:48px}}
-.tease{background:var(--plaster);padding:var(--sec) var(--pad);margin-top:var(--sec)}
-.tease-in{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;align-items:center}
-.tease-in img{width:100%;aspect-ratio:16/9;object-fit:cover}
-.tease-in h2{margin-bottom:16px}
-.tease-in p{margin-bottom:24px;max-width:30em}
-@media(min-width:900px){.tease-in{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px}}
 
 /* footer */
 .ftr{padding:96px var(--pad) 120px}
@@ -315,10 +309,43 @@ dialog.panel::backdrop{background:rgba(21,21,21,.6)}
 .panel form{display:grid;gap:16px;margin-bottom:24px}
 .panel .btns .btn{flex:1 1 200px}
 .pempty{margin:12px 0 20px}
-.ahead{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;padding:var(--sec) var(--pad) 0;align-items:center}
-.ahead img{width:100%;max-width:360px;aspect-ratio:4/5;object-fit:cover}
-.ahead h2{margin-bottom:16px}.ahead p{margin-bottom:28px;max-width:30em}
-@media(min-width:900px){.ahead{grid-template-columns:minmax(0,4fr) minmax(0,5fr);gap:96px}.ahead img{max-width:none}}
+
+
+
+
 
 .stmt{font:800 clamp(34px,5.4vw,78px)/1.08 var(--f1);font-variation-settings:"SOFT" 100,"WONK" 0;letter-spacing:-.02em;max-width:15em;text-wrap:balance}
-.ahead img{mix-blend-mode:multiply;max-width:300px}@media(min-width:900px){.ahead img{max-width:340px}}
+
+
+/* polish round */
+@media(max-width:899px){.hero-tx p{display:none}}
+.stmt-sub{margin-top:28px;max-width:34em;color:var(--muted);font-size:clamp(17px,1.4vw,20px)}
+.bake{padding-top:var(--sec)}
+.mosaic{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 var(--pad)}
+.mosaic img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover}
+.mosaic .m-big{grid-column:1/-1}
+@media(min-width:900px){.mosaic{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.mosaic .m-big{grid-column:1/3;grid-row:1/3}}
+.board{margin-top:var(--sec)}
+.room{padding-top:calc(var(--sec) * 1.15)}
+.room-img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+@media(min-width:900px){.room-img{aspect-ratio:2.25/1}}
+.room-q{padding:56px var(--pad) 0;font:600 clamp(26px,3vw,44px)/1.25 var(--f1);font-variation-settings:"SOFT" 100,"WONK" 0;max-width:22em;letter-spacing:-.01em}
+@media(min-width:900px){.room-q{padding-top:72px;margin-left:auto;margin-right:auto;text-align:center;max-width:none;width:min(20em,100%)}}
+.ahead{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;padding-top:var(--sec);align-items:center}
+.ahead img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.ahead-tx{padding:0 var(--pad)}
+.ahead h2{margin-bottom:16px}.ahead p{margin-bottom:28px;max-width:30em}
+@media(min-width:900px){.ahead{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:80px;padding-right:var(--pad)}.ahead-tx{padding:0}}
+.mom{position:relative;margin-top:var(--sec);background:var(--ink);color:var(--chalk);min-height:clamp(440px,52vw,680px);display:flex;align-items:flex-end;overflow:hidden}
+.mom-pat{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:18% 60%}
+.mom-box{position:relative;background:var(--ink);padding:32px 28px;margin:0 16px 16px}
+.mom-box h2{font-size:clamp(44px,7vw,112px);line-height:1}
+.mom-box p{margin-top:12px;color:var(--mutedd)}
+@media(min-width:900px){.mom{justify-content:flex-end;align-items:center}.mom-box{margin:0 var(--pad) 0 0;padding:48px 56px}}
+.visit{margin-top:calc(var(--sec) * 1.15)}
+@media(min-width:900px){.visit--flip{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}.visit--flip .visit-ph{order:2}}
+.tease{margin-top:var(--sec);background:var(--plaster)}
+.tease-img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.tease-tx{padding:48px var(--pad) var(--sec)}
+.tease-tx h2{margin-bottom:16px;max-width:16em}.tease-tx p{margin-bottom:28px;max-width:30em}
+@media(min-width:900px){.tease-img{aspect-ratio:16/7}.tease-tx{padding:72px var(--pad) var(--sec)}}
