@@ -4,6 +4,12 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function hdrState() {
+    var h = document.querySelector('.hdr--over'), hero = document.querySelector('.ahero'), d = document.getElementById('drawer');
+    if (!h || !hero) return;
+    h.classList.toggle('solid', window.scrollY > hero.offsetHeight - h.offsetHeight - 8 || (d && !d.hidden));
+  }
+
   /* drawer */
   var burger = $('#burger'), drawer = $('#drawer');
   function setDrawer(open) {
@@ -11,6 +17,7 @@
     drawer.hidden = !open;
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    hdrState();
   }
   if (burger) {
     burger.addEventListener('click', function () { setDrawer(drawer.hidden); });
@@ -39,7 +46,7 @@
       lastY = y;
     }
     if (footerSeen || (document.body.classList.contains('pg-home') && y < 120)) setOff(true);
-    updateChips();
+    updateChips(); hdrState();
   }
   window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(onScroll); } }, { passive: true });
 
@@ -261,5 +268,5 @@
     render();
   }
 
-  updateChips();
+  updateChips(); hdrState();
 })();
