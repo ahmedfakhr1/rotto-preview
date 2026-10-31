@@ -377,3 +377,21 @@ dialog.panel::backdrop{background:rgba(21,21,21,.6)}
 .quote img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
 @media(min-width:900px){.quote{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:80px}}
 @media(min-width:900px){.hdr--over:not(.solid) .lw{height:54px}.ahero-box{max-width:760px}}
+
+/* v7: quiet round controls */
+.ic{position:relative;width:44px;height:44px;min-width:44px;padding:0;border:0;background:none;color:var(--ink);font:400 20px/1 var(--f2);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:transform .12s}
+.ic::before{content:"";position:absolute;inset:8px;border:1.5px solid currentColor;border-radius:50%;transition:background-color .15s}
+.ic span{position:relative}
+.ic:active{transform:scale(.94)}
+@media(hover:hover) and (pointer:fine){.ic:hover::before{background:var(--ink)}.ic:hover{color:var(--chalk)}}
+.add.ic{min-height:44px;border:0}
+.step{border:0;background:none;gap:0}
+.step output{min-width:22px;font-size:15px}
+.menu .rows li{padding:2px 4px 2px 14px;min-height:48px}
+.ctl{margin-left:2px}
+.card{grid-template-columns:minmax(0,1fr) auto auto;column-gap:4px}
+.card .ctl{grid-column:auto;margin-top:0;align-self:center}
+.card .add,.card .step{width:auto}
+.card .step{justify-content:flex-start}
+.menu .rows li:nth-child(odd),.menu .rows li:nth-child(4n+1),.menu .rows li:nth-child(4n+2){--tint:#ededed}
+@media(max-width:699px){.card .ctl:has(.step){grid-column:1/-1;justify-self:start;margin-left:-8px}}

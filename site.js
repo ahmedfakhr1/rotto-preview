@@ -209,7 +209,7 @@
     var keyOf = function (li) { return li.dataset.sand ? li.dataset.k + '-b' + breadIdx() : li.dataset.k; };
     var priceOf = function (li) { return parseInt($('.p', li).textContent, 10) || 0; };
     var stepper = function (q, name, attr) {
-      return '<span class="step" role="group" aria-label="Quantity of ' + name + '"><button type="button" data-act="dec" ' + attr + ' aria-label="Remove one ' + name + '">&minus;</button><output aria-live="off">' + q + '</output><button type="button" data-act="inc" ' + attr + ' aria-label="Add one ' + name + '">+</button></span>';
+      return '<span class="step" role="group" aria-label="Quantity of ' + name + '"><button class="ic" type="button" data-act="dec" ' + attr + ' aria-label="Remove one ' + name + '"><span aria-hidden="true">&minus;</span></button><output aria-live="off">' + q + '</output><button class="ic" type="button" data-act="inc" ' + attr + ' aria-label="Add one ' + name + '"><span aria-hidden="true">+</span></button></span>';
     };
     var esc = function (t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); };
     var count = function () { var n = 0; for (var k in basket) n += basket[k].q; return n; };
@@ -218,7 +218,7 @@
     items.forEach(function (li) { var c = document.createElement('div'); c.className = 'ctl'; li.appendChild(c); });
     function ctl(li) {
       var k = keyOf(li), q = basket[k] ? basket[k].q : 0, nm = esc(li.dataset.n + (li.dataset.sand ? ' on ' + breadName() : ''));
-      $('.ctl', li).innerHTML = q ? stepper(q, nm, 'data-k="' + k + '" data-row="1"') : '<button class="add" type="button" data-act="add" aria-label="Add ' + nm + ' to pickup order">Add</button>';
+      $('.ctl', li).innerHTML = q ? stepper(q, nm, 'data-k="' + k + '" data-row="1"') : '<button class="add ic" type="button" data-act="add" aria-label="Add ' + nm + ' to pickup order"><span aria-hidden="true">+</span></button>';
     }
     function render() {
       items.forEach(ctl);
