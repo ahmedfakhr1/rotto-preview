@@ -395,3 +395,9 @@ dialog.panel::backdrop{background:rgba(21,21,21,.6)}
 .card .step{justify-content:flex-start}
 .menu .rows li:nth-child(odd),.menu .rows li:nth-child(4n+1),.menu .rows li:nth-child(4n+2){--tint:#ededed}
 @media(max-width:699px){.card .ctl:has(.step){grid-column:1/-1;justify-self:start;margin-left:-8px}}
+
+.bar a,.bar button{white-space:nowrap}
+.bar .cnt{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;margin-left:8px;padding:0 6px;border-radius:11px;background:var(--ink);color:var(--chalk);font-size:13px;font-weight:600}
+.bar .cnt[data-n="0"]{display:none}
+
+@media(max-width:699px){.card{grid-template-columns:minmax(0,1fr) auto}.card .n{grid-column:1/-1}.card .ctl:has(.step){grid-column:1/-1}}

@@ -222,7 +222,7 @@
     }
     function render() {
       items.forEach(ctl);
-      $$('[data-count]').forEach(function (e) { e.textContent = count(); });
+      $$('[data-count]').forEach(function (e) { var n = count(); e.textContent = n; e.setAttribute('data-n', n); });
       var keys = Object.keys(basket);
       $('#pempty').hidden = keys.length > 0; $('#plist').hidden = !keys.length; $('#ptotalRow').hidden = !keys.length;
       $('#plist').innerHTML = keys.map(function (k) { var b = basket[k], n = esc(b.n);
